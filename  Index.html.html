@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Coach Alisa – Womanhood &amp; Business</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c2340; --ink-2:#4a5273; --mist:#eef1fa; --paper:#fbfcff; --peri:#8da2dc; --blush:#f3c9c2; --line:#d9deef;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--ink:#eef1fa;--ink-2:#b4bcd8;--mist:#232b4d;--paper:#161b33;--peri:#8da2dc;--blush:#e9b3ab;--line:#333c64}}
+:root[data-theme="dark"]{color-scheme:dark;--ink:#eef1fa;--ink-2:#b4bcd8;--mist:#232b4d;--paper:#161b33;--peri:#8da2dc;--blush:#e9b3ab;--line:#333c64}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 Figtree,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:"Bricolage Grotesque",Figtree,sans-serif;line-height:1.05;margin:0;letter-spacing:-.02em}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.logo{font:800 20px "Bricolage Grotesque",sans-serif;text-decoration:none;letter-spacing:-.02em}
+.btn{display:inline-block;background:var(--ink);color:var(--paper);padding:14px 26px;border-radius:999px;font-weight:600;text-decoration:none;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px);background:var(--peri);color:#1c2340}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--peri);outline-offset:3px}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.hero{position:relative;padding:56px 0 110px}
+.hero h1{font-size:clamp(46px,9vw,104px);font-weight:800;max-width:11ch;position:relative;z-index:1}
+.hero p{font-size:clamp(18px,2.4vw,22px);color:var(--ink-2);max-width:34ch;margin:28px 0 36px;position:relative;z-index:1}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:1}
+.stroke{position:absolute;right:-8%;top:6%;width:80%;height:auto;z-index:0;opacity:.9;pointer-events:none}
+.stroke path{fill:none;stroke:var(--peri);stroke-width:46;stroke-linecap:round;stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 1.8s .2s cubic-bezier(.6,.1,.2,1) forwards}
+.stroke path.b{stroke:var(--blush);stroke-width:22;animation-delay:.7s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.hero h1 span{display:inline-block;opacity:0;transform:translateY(24px);animation:up .8s forwards}
+.hero h1 span:nth-child(1){animation-delay:.1s}.hero h1 span:nth-child(2){animation-delay:.25s}.hero h1 span:nth-child(3){animation-delay:.4s}.hero h1 span:nth-child(4){animation-delay:.55s}
+@keyframes up{to{opacity:1;transform:none}}
+.band{background:var(--ink);color:var(--paper);overflow:hidden;padding:16px 0;white-space:nowrap}
+.band div{display:inline-block;font:800 22px "Bricolage Grotesque",sans-serif;animation:slide 26s linear infinite}
+.band span{margin:0 22px}
+@keyframes slide{to{transform:translateX(-50%)}}
+section{padding:96px 0}
+.about{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start}
+.about h2,.split h2,.cta h2{font-size:clamp(32px,5vw,52px);font-weight:800}
+.about p{margin:0 0 16px;color:var(--ink-2);font-size:19px}
+.split{background:var(--mist)}
+.split h2{margin-bottom:40px;max-width:16ch}
+.tracks{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.track{padding:36px;border-radius:28px;background:var(--paper);border:1px solid var(--line);transition:transform .25s}
+.track:hover{transform:translateY(-4px) rotate(-.4deg)}
+.track:nth-child(2){border-radius:28px 28px 28px 80px}
+.track:nth-child(1){border-radius:28px 80px 28px 28px}
+.track h3{font-size:30px;margin-bottom:12px}
+.track p{margin:0;color:var(--ink-2)}
+.dot{width:14px;height:14px;border-radius:50%;background:var(--peri);margin-bottom:22px}
+.track:nth-child(2) .dot{background:var(--blush)}
+.proof{max-width:680px}
+.proof h2{font-size:clamp(32px,5vw,52px);font-weight:800;margin-bottom:20px}
+.proof p{color:var(--ink-2);font-size:19px;margin:0}
+.cta{background:var(--ink);color:var(--paper);text-align:center;border-radius:40px;padding:72px 24px;margin-bottom:56px}
+.pricing h2{font-size:clamp(40px,7vw,80px);font-weight:800;max-width:12ch}
+.sub{color:var(--ink-2);font-size:19px;margin:14px 0 0}
+.prices{list-style:none;margin:40px 0 28px;padding:0;max-width:560px;border-top:2px solid var(--ink)}
+.prices li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:20px 0;border-bottom:2px solid var(--ink);transition:padding .25s}
+.prices li:hover{padding-left:12px}
+.prices span{font:800 clamp(20px,3.4vw,28px) "Bricolage Grotesque",sans-serif;letter-spacing:-.01em}
+.prices b{font:800 clamp(28px,4.4vw,40px) "Bricolage Grotesque",sans-serif;color:var(--peri)}
+.list{background:var(--ink);color:var(--paper);border-radius:36px;padding:56px 32px;max-width:720px;margin:0 auto;text-align:center}
+.list h2{font-size:clamp(30px,5vw,46px);font-weight:800;margin-bottom:20px}
+.list p{margin:0 0 32px;font-size:18px;opacity:.92}
+.list form{display:grid;gap:14px;text-align:left}
+.list input{font:inherit;width:100%;padding:16px 20px;border-radius:16px;border:2px solid var(--paper);background:transparent;color:var(--paper)}
+.list input::placeholder{color:inherit;opacity:.65}
+.list input:focus-visible{outline:3px solid var(--blush);outline-offset:2px}
+.list button{font:600 16px Figtree,sans-serif;cursor:pointer;border:0;margin-top:8px;padding:16px;border-radius:999px;background:var(--blush);color:#1c2340;transition:transform .2s}
+.list button:hover{transform:translateY(-2px)}
+.thanks{display:none;font:800 24px "Bricolage Grotesque",sans-serif;margin:0}
+.list.done form{display:none}.list.done .thanks{display:block}
+.cta p{max-width:36ch;margin:18px auto 32px;color:var(--line);font-size:19px}
+.cta .btn{background:var(--blush);color:#1c2340}
+.cta .btn:hover{background:var(--paper)}
+footer{padding:0 0 48px;color:var(--ink-2);font-size:15px;text-align:center}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+@media(max-width:720px){.about,.tracks{grid-template-columns:1fr}section{padding:64px 0}.stroke{width:120%;top:30%;opacity:.55}.track{padding:28px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.stroke path{stroke-dashoffset:0}.hero h1 span,.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <nav>
+    <a class="logo" href="#top">Coach Alisa</a>
+    <a class="btn ghost" href="#connect">Say hello</a>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <svg class="stroke" viewBox="0 0 800 400" aria-hidden="true">
+      <path d="M20 330 C 200 60, 420 40, 780 120"/>
+      <path class="b" d="M60 370 C 260 140, 480 120, 760 190"/>
+    </svg>
+    <h1><span>Mind</span> <span>your</span> <span>business.</span> <span>Own&nbsp;it.</span></h1>
+    <p>Coaching for women who run their lives and their businesses, and want to do both on their own terms.</p>
+    <div class="row">
+      <a class="btn" href="https://www.facebook.com/shescoachalisa" target="_blank" rel="noopener">Work with Alisa</a>
+      <a class="btn ghost" href="#about">Meet Alisa</a>
+    </div>
+  </div>
+
+  <div class="band" aria-hidden="true"><div>
+    <span>Womanhood</span><span>Business</span><span>Womanhood</span><span>Business</span><span>Womanhood</span><span>Business</span><span>Womanhood</span><span>Business</span><span>Womanhood</span><span>Business</span><span>Womanhood</span><span>Business</span>
+  </div></div>
+
+  <section id="about"><div class="wrap about">
+    <h2 class="rv">A woman who minds her business.</h2>
+    <div class="rv">
+      <p>Alisa runs a few businesses of her own, and while she was at it, she created her own coaching niche.</p>
+      <p>Now she brings that same hands-on experience to women who are building a business, growing into who they are, or both at once.</p>
+    </div>
+  </div></section>
+
+  <section class="split"><div class="wrap">
+    <h2 class="rv">Two sides of one life, coached together.</h2>
+    <div class="tracks">
+      <div class="track rv"><div class="dot"></div><h3>Womanhood</h3><p>Space to figure out who you are, what you want, and how to show up as her every day.</p></div>
+      <div class="track rv"><div class="dot"></div><h3>Business</h3><p>Practical, no-fluff coaching for building and running a business that fits your life.</p></div>
+    </div>
+  </div></section>
+
+  <section class="pricing" id="pricing"><div class="wrap">
+    <h2 class="rv">Real talk by message.</h2>
+    <p class="sub rv">Written coaching + business support</p>
+    <ul class="prices rv">
+      <li><span>Written check-in</span><b>$25</b></li>
+      <li><span>3-day real talk</span><b>$45</b></li>
+      <li><span>Business clarity review</span><b>$75</b></li>
+    </ul>
+    <p class="sub rv" style="margin-bottom:28px">Private messages. Personal support.</p>
+    <a class="btn rv" href="https://www.facebook.com/shescoachalisa" target="_blank" rel="noopener">Message me to book yours</a>
+  </div></section>
+
+  <section><div class="wrap proof rv">
+    <h2>Always learning, always certified.</h2>
+    <p>Alisa keeps her own growth public. Every certification and training she completes goes into her official Coach Alisa album, so you can see the work behind the coaching.</p>
+  </div></section>
+
+  <section style="padding-top:0"><div class="wrap">
+    <div class="list rv" id="list">
+      <h2>The Real Talk List</h2>
+      <p>Sometimes it’s womanhood. Sometimes it’s business. Sometimes it’s the stuff I wouldn’t even turn into a social media post. Join me for real conversations, things I’m figuring out in my own life and business, questions that might have you looking at your own life differently, and the occasional “girl, I need to tell you something” email. You’ll also be the first to hear about new sessions, projects, events, and whatever I’m creating next. No content calendar. No inspirational email every Tuesday at 9 AM. Just me showing up in your inbox when I actually have something worth saying.</p>
+      <form id="listForm">
+        <input type="text" name="first" placeholder="First name" aria-label="First name" autocomplete="given-name" required>
+        <input type="email" name="email" placeholder="Email" aria-label="Email" autocomplete="email" required>
+        <input type="tel" name="phone" placeholder="Phone number" aria-label="Phone number" autocomplete="tel">
+        <button type="submit">Get on the list</button>
+      </form>
+      <p class="thanks" role="status">You’re on the list. Talk soon.</p>
+    </div>
+  </div></section>
+
+  <div class="wrap">
+    <div class="cta rv" id="connect">
+      <h2>Women of all kinds are welcome here.</h2>
+      <p>Come say hi on Facebook and see if Alisa’s coaching is the right fit for you.</p>
+      <a class="btn" href="https://www.facebook.com/shescoachalisa" target="_blank" rel="noopener">Message Alisa</a>
+    </div>
+  </div>
+</main>
+
+<footer class="wrap">© Coach Alisa – Womanhood &amp; Business · @shescoachalisa</footer>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+  els.forEach(function(e){io.observe(e)});
+})();
+document.getElementById('listForm').addEventListener('submit',function(ev){ev.preventDefault();document.getElementById('list').classList.add('done')});
+</script>
+</body>
+</html>
